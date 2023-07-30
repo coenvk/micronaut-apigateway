@@ -1,0 +1,20 @@
+micronaut:
+  server:
+    port: 8080
+  application:
+    name: apigateway
+  config-client:
+    enabled: true
+eureka:
+  client:
+    registration:
+      enabled: false
+    defaultZone: ${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}
+gateway:
+  routes:
+    - id: identity-provider
+      path: identity
+netty:
+  default:
+    allocator:
+      max-order: 3
